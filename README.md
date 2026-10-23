@@ -1,13 +1,10 @@
-# Android 实验二 网络访问与Git
+# Android 实验三：巡检页面整理与 OkHttp 网络请求
 
-## 实验目标
-完成一次真实网络请求，对比 HTTP 明文配置前后的差异，并推送到个人 Git 仓库。
+## 运行方法
+使用 Android Studio 打开项目，同步 Gradle 后，运行到模拟器或真机。
+点击页面上的“请求 A203”或“请求 A204”按钮即可发起网络请求并查看回显。
 
-## 运行方式
-使用 Android Studio 打开项目，同步 Gradle 后运行到模拟器，点击界面上的按钮发起请求。
-
-## 接口地址
-- HTTPS: https://httpbin.org/get?room=A203
-- HTTP: http://httpbin.org/get?room=A203
-
-> HTTP 仅用于教学对比，实际服务优先 HTTPS。
+## 三个源码文件职责
+1. `MainActivity.kt`：系统入口，负责设置 Compose 内容，安排请求与结果更新。
+2. `InspectionScreen.kt`：显示巡检数据、按钮与回调，并计算未检查数量。
+3. `InspectionNetwork.kt`：创建 OkHttpClient，执行网络请求，处理响应和异常。
